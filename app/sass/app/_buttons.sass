@@ -1,0 +1,91 @@
+$twitter: #4099FF
+
+a.plain
+  text-decoration: underline
+  font-size: .9rem
+
+  &:before, &:after
+    text-decoration: none
+
+a.coinery-cta
+  @include transition(all .2s)
+  display: block
+  margin-bottom: 0px
+  height: 0px
+
+  img
+    @include transition(all .2s)
+    @include transform(scale(.5))
+    opacity: 0
+
+  &.visible
+    height: 205px
+    margin-bottom: 50px
+
+    img
+      @include transform(scale(1))
+      opacity: 1
+
+
+a.button
+  @include border-radius(3px)
+  @include transition(all .1s)
+  @include disable-select
+  display: inline-block
+  padding: 13px 20px
+  color: #fff
+  background: $green
+  font-weight: 700
+  font-size: .95rem
+  text-decoration: none
+
+  &:hover
+    background: darken($green, 3%)
+
+
+  &.small
+    @include border-radius(2px)
+    padding: 7px 14px
+    font-size: .8rem
+
+    &.gray
+      font-weight: 600
+      color: #3D5345
+      background: #DDE4DF
+
+      &:hover
+        background: darken(#DDE4DF, 3%)
+        color: darken(#3D5345, 3%)
+
+
+  &.right
+    float: right
+    margin-left: 10px
+
+  &.twitter
+    background: $twitter
+
+    &:hover
+      background: darken($twitter, 3%)
+
+  i
+    padding-left: 6px
+
+
+a.back
+  @include fadein(2s)
+  position: absolute
+  top: 10px
+  font-size: .8rem
+  font-weight: 500
+  color: lighten($dark, 45%)
+
+  &:hover
+    color: lighten($dark, 35%)
+
+
+
+
+
+
+

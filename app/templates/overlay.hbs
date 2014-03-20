@@ -1,0 +1,46 @@
+<div class="overlay">
+  <div class="flag {{#if published}}published{{/if}}">
+    {{#if published}}
+      <span class="status">Live</span>
+    {{else}}
+      <span class="status">Draft</span>
+    {{/if}}
+    <img src="images/flag.svg" width="81" height="81">
+  </div>
+  <div class="cover">
+      {{#if cover}}
+      <img class="cover-photo" src="{{cover}}">
+      <div class="cover-container">
+        <a class="button dark corner" data-href="cover-dropzone">Change Cover Photo</a>
+        <div style="display: none;" class="dz-cover-preview-container"></div>
+      </div>
+      {{else}}
+        <div class="cover-container">
+          <img class="cam" src="images/camera.svg"><br>
+          <a class="button dark" data-href="cover-dropzone">Upload Cover Photo<i class="fa fa-cloud-upload"></i></a>
+          <div style="display: none;" class="dz-cover-preview-container"></div>
+        </div>
+      {{/if}}
+  </div>
+  <div class="product-main">
+    <div class="unsaved">
+      <span class="warning">Warning</span>
+      <p>Don't forget to save your changes!</p>
+    </div>
+    <div class="field-container">
+      <div class="title-container">
+        <input class="title" data-id="title" value="{{title}}">
+      </div>
+      <div class="price-container">
+        <div class="field-wrapper" data-currency="BTC">
+          <input class="btc" type="text">
+        </div>
+        <div class="field-wrapper" data-currency="USD">
+          <input data-id="price" class="usd" type="text">
+        </div>
+      </div>
+    </div>
+    <div data-id="description" class="description" contenteditable>{{#if description}}{{{description}}}{{else}}Add a description of your product...{{/if}}</div>
+  </div>
+</div>
+

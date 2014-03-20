@@ -1,0 +1,13 @@
+{
+  "name": "coinery",
+  "version": "0.1.0",
+  "main": "public/javascripts/app.js",
+  "dependencies": {
+    "jquery": "latest",
+    "underscore": "latest",
+    "backbone": "latest",
+    "normalize-css": "~3.0.0",
+    "pace": "latest",
+    "dropzone": "latest"
+  }
+}

@@ -1,0 +1,136 @@
+*
+  &::-webkit-input-placeholder
+    color: lighten($dark, 55%)
+    font-weight: 300
+  &:-moz-placeholder
+    color: lighten($dark, 55%)
+    font-weight: 300
+  &::-moz-placeholder
+    color: lighten($dark, 55%)
+    font-weight: 300
+  &:-ms-input-placeholder
+    color: lighten($dark, 55%)
+    font-weight: 300
+
+input[type="text"]
+  @include transition(border .2s, color .15s)
+  background: #fff
+  border: 0px
+  border-left: 2px solid lighten($dark, 55%)
+  padding: 13px 15px
+  margin-top: 3px
+  font-weight: 400
+  color: $dark
+  position: relative
+  font-size: 1rem
+
+  &:hover
+    border-left: 2px solid lighten($dark, 35%)
+
+  &:focus
+    border-left: 4px solid $green
+    outline: 0px
+
+  &.wide
+    width: 400px
+
+  &.currency
+    width: 200px
+
+  &.changing
+    color: #fff
+
+.fieldset .field-wrapper
+
+  margin-right: 10px
+  display: inline-block
+  position: relative
+
+  &[data-currency="USD"]:after
+    content: 'USD'
+  &[data-currency="BTC"]:after
+    content: 'BTC'
+
+  &:after
+    content: ''
+    background: #eee
+    position: absolute
+    padding: 7px 15px
+    text-align: center
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: lighten($dark, 15%)
+    font-size: .75rem
+    font-weight: 700
+    right: 7px
+    top: 10px
+
+
+.field
+  @include pie-clearfix
+  display: inline-block
+  position: relative
+
+.field a.button.attached
+  @include border-radius(0px 3px 3px 0px)
+  margin-left: -5px
+
+p.hint
+  margin-top: -10px
+  opacity: .5
+
+span.or
+  display: inline-block
+  font-size: .9rem
+  padding-left: 10px
+  opacity: .5
+
+span.hint
+  @include transition(all .2s)
+  font-style: italic
+  font-weight: 400
+  font-size: .85rem
+  color: lighten($dark, 30%)
+  display: block
+  margin:
+    top: 20px
+    left: 16px
+
+.fieldset
+  @include transition(all .2s, margin .2s)
+  @include transition-delay(.2s)
+  @include pie-clearfix
+  margin-bottom: 60px
+  position: relative
+  top: 0px
+  opacity: 1
+
+  h4
+    @include transition(all .2s)
+
+
+  &.hidden
+    opacity: 0
+    top: -20px
+
+  &.complete
+
+    span.hint
+      opacity: .3
+
+    a.button
+      display: none
+
+    .field:after
+      content: '\f00c'
+      font-family: 'FontAwesome'
+      font-size: 1.5rem
+      position: absolute
+      color: $green
+      right: -40px
+      padding: 12px 0px
+      top: 0px
+
+    h4
+      opacity: .8
+
